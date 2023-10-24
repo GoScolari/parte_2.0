@@ -22,5 +22,5 @@
         android:layout_below="@id/title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:text="Iniciar Parte" />
+        android:text="Iniciar Parte MODIFICADO" />
 </RelativeLayout>
