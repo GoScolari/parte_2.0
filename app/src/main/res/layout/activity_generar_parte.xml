@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="0dp"
     android:background="#FFFFFF"
     android:orientation="vertical"
     android:paddingBottom="50dp">
@@ -13,19 +12,44 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#071B87"
-        android:contentInsetStart="0dp"
+        android:background="#283593"
+        android:contentInsetStartWithNavigation="0dp"
         android:theme="?attr/actionBarTheme"
         app:popupTheme="?attr/actionBarPopupTheme">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="VC-1"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
 
+            <Button
+                android:id="@+id/volverButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:onClick="volver"
+                android:text="Volver"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="VC-1"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/inicioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textColor="#FFFFFF"
+                android:background="?android:selectableItemBackground"
+                android:onClick="inicio" />
+        </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <GridLayout
@@ -33,16 +57,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="300dp"
         android:layout_weight="1"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:columnCount="2"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="5dp"
-        android:rowCount="2"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="150dp">
+        android:rowCount="2">
 
+        <!-- Tarjeta 1 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card1"
             android:layout_width="0dp"
@@ -59,12 +84,13 @@
                 android:background="#6E6E6E"
                 android:backgroundTint="#283593"
                 android:gravity="center"
-                android:text="GENERAR PARTE"
+                android:text="Fecha"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
         </androidx.cardview.widget.CardView>
 
+        <!-- Tarjeta 2 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card2"
             android:layout_width="0dp"
@@ -80,49 +106,7 @@
                 android:layout_height="match_parent"
                 android:background="#283593"
                 android:gravity="center"
-                android:text="HISTORIAL"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card3"
-            android:layout_width="0dp"
-            android:layout_height="10dp"
-            android:layout_rowWeight="0.5"
-            android:layout_columnWeight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#283593"
-                android:gravity="center"
-                android:text="PERSONAL"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card4"
-            android:layout_width="0dp"
-            android:layout_height="10dp"
-            android:layout_rowWeight="0.5"
-            android:layout_columnWeight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#283593"
-                android:gravity="center"
-                android:text="EXPORTAR"
+                android:text="Registro"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
@@ -131,13 +115,12 @@
     </GridLayout>
 
     <Button
-        android:id="@+id/salirButton"
         android:layout_width="143dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="#D32F2F"
-        android:onClick="salir"
-        android:text="SALIR"
+        android:backgroundTint="#283593"
+        android:onClick="guardar"
+        android:text="GUARDAR"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textColorHighlight="#9E0A0A"
