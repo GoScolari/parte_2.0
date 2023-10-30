@@ -222,7 +222,7 @@
         android:layout_gravity="center"
         android:backgroundTint="#283593"
         android:onClick="modificar"
-        android:text="Modificar"
+        android:text="Modifica"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textColorHighlight="#9E0A0A"
