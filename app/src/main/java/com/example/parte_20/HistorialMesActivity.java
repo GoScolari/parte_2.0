@@ -8,14 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PersonalActivity extends AppCompatActivity {
+public class HistorialMesActivity extends AppCompatActivity {
 
     private Button volverButton;
     private Button inicioButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal);
+        setContentView(R.layout.activity_historial_mes);
 
         volverButton = findViewById(R.id.volverButton);
         inicioButton = findViewById(R.id.inicioButton);
@@ -30,7 +30,7 @@ public class PersonalActivity extends AppCompatActivity {
         inicioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PersonalActivity.this, MainActivity.class);
+                Intent intent = new Intent(HistorialMesActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -38,26 +38,21 @@ public class PersonalActivity extends AppCompatActivity {
         CardView card1 = findViewById(R.id.card1);
         CardView card2 = findViewById(R.id.card2);
         CardView card3 = findViewById(R.id.card3);
-        CardView card4 = findViewById(R.id.card4);
-
-        card4.setOnClickListener(v -> {
-            Intent personalIntent = new Intent(PersonalActivity.this, PersonalEscalafonActivity.class);
-            startActivity(personalIntent);
-        });
 
         card3.setOnClickListener(v -> {
-            Intent personalIntent = new Intent(PersonalActivity.this, PersonalEscalafonActivity.class);
+            Intent personalIntent = new Intent(HistorialMesActivity.this, HistorialActivity.class);
             startActivity(personalIntent);
         });
 
         card2.setOnClickListener(v -> {
-            Intent historialIntent = new Intent(PersonalActivity.this, PersonalEscalafonActivity.class);
+            Intent historialIntent = new Intent(HistorialMesActivity.this, HistorialActivity.class);
             startActivity(historialIntent);
         });
 
         card1.setOnClickListener(v -> {
-            Intent generarParteIntent = new Intent(PersonalActivity.this, PersonalEscalafonActivity.class);
+            Intent generarParteIntent = new Intent(HistorialMesActivity.this, HistorialActivity.class);
             startActivity(generarParteIntent);
         });
+
     }
 }

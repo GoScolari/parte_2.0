@@ -76,9 +76,11 @@
             android:layout_columnWeight="1"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
-            app:cardUseCompatPadding="true">
+            app:cardUseCompatPadding="true"
+            android:onClick="abrirCalendario">
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#6E6E6E"
@@ -102,6 +104,7 @@
             app:cardUseCompatPadding="true">
 
             <TextView
+                android:id="@+id/TextView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#283593"

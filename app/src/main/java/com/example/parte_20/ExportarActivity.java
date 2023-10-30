@@ -1,7 +1,6 @@
 package com.example.parte_20;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
-public class GenerarParteActivity extends AppCompatActivity {
+public class ExportarActivity extends AppCompatActivity {
     TextView tv;
 
     private Button volverButton;
@@ -22,9 +21,9 @@ public class GenerarParteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_generar_parte);
+        setContentView(R.layout.activity_exportar);
 
-        tv = findViewById(R.id.textView);
+        tv = findViewById(R.id.textView3);
         volverButton = findViewById(R.id.volverButton);
         inicioButton = findViewById(R.id.inicioButton);
 
@@ -35,31 +34,21 @@ public class GenerarParteActivity extends AppCompatActivity {
             }
         });
 
-
         inicioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GenerarParteActivity.this, MainActivity.class);
+                Intent intent = new Intent(ExportarActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
-
-        CardView card2 = findViewById(R.id.card2);
-
-        card2.setOnClickListener(v -> {
-            Intent generarParteIntent = new Intent(GenerarParteActivity.this, RegistroActivity.class);
-            startActivity(generarParteIntent);
-        });
-
     }
-
     public void abrirCalendario(View view) {
         Calendar cal = Calendar.getInstance();
         int anio = cal.get(Calendar.YEAR);
         int mes = cal.get(Calendar.MONTH);
         int dia = cal.get(Calendar.DAY_OF_MONTH);
 
-        DatePickerDialog dpd = new DatePickerDialog(GenerarParteActivity.this, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog dpd = new DatePickerDialog(ExportarActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 String fecha = dayOfMonth + "/" + month + "/" + year;

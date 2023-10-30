@@ -14,15 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Buscar el botón "SALIR" por su ID
         Button salirButton = findViewById(R.id.salirButton);
 
-        // Configurar un listener de clic para el botón "SALIR"
         salirButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Acción que ocurre al hacer clic en el botón "SALIR"
-                finish(); // Cierra la actividad actual
+                finishAffinity();
             }
         });
 
@@ -31,9 +28,19 @@ public class MainActivity extends AppCompatActivity {
         CardView card3 = findViewById(R.id.card3);
         CardView card4 = findViewById(R.id.card4);
 
+        card4.setOnClickListener(v -> {
+            Intent exportarIntent = new Intent(MainActivity.this, ExportarActivity.class);
+            startActivity(exportarIntent);
+        });
+
         card3.setOnClickListener(v -> {
             Intent personalIntent = new Intent(MainActivity.this, PersonalActivity.class);
             startActivity(personalIntent);
+        });
+
+        card2.setOnClickListener(v -> {
+            Intent historialIntent = new Intent(MainActivity.this, HistorialMesActivity.class);
+            startActivity(historialIntent);
         });
 
         card1.setOnClickListener(v -> {
